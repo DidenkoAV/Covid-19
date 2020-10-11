@@ -1,5 +1,6 @@
 class total_country {
-  String country, countryCode, totalConfirmed;
+  String country, countryCode;
+     int totalConfirmed;
   int count;
 
   total_country(

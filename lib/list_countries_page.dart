@@ -30,10 +30,10 @@ class ListCountriesState extends State<list_countries_page> {
         var record = total_country(
             country: val['Country'],
             countryCode: val['CountryCode'],
-            totalConfirmed: val['TotalConfirmed'].toString());
+            totalConfirmed: val['TotalConfirmed']);
         ListCountriesData.add(record);
           data = ListCountriesData;
-          //data.sort((a, b) => a.totalConfirmed.compareTo(b.totalConfirmed));
+          data.sort((b, a) => a.totalConfirmed.compareTo(b.totalConfirmed));
       });
     }
   }
@@ -85,13 +85,13 @@ class ListCountriesState extends State<list_countries_page> {
               ),
               leading: Flag(
                 totalCountry.countryCode,
-                height: 20,
-                width: 25,
+                height: 27,
+                width: 35,
                 fit: BoxFit.fill,
               ),
               trailing: Text(
                 totalCountry.totalConfirmed.toString(),
-                style: TextStyle(fontSize: 15,  color: Colors.redAccent),
+                style: TextStyle(fontSize: 18,  color: Colors.redAccent),
               ),
           onTap:() => Navigator.push(context, PageRouteBuilder(
             opaque: false,
